@@ -22,6 +22,14 @@ export function TabsTrigger({ children, value }: TabsTriggerProps) {
   return <button data-value={value}>{children}</button>
 }
 
-export function TabsContent({ children }: { children: React.ReactNode }) {
-  return <div className="tabs-content">{children}</div>
+type TabsContentProps = {
+  children: React.ReactNode
+  value: string
 }
+
+export function TabsContent({ children, value }: TabsContentProps) {
+  return <div data-value={value}>{children}</div>
+}
+
+
+
