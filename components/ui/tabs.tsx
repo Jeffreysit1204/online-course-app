@@ -1,6 +1,11 @@
 import React from 'react'
 
-export function Tabs({ children }: { children: React.ReactNode }) {
+type TabsProps = {
+  children: React.ReactNode
+  defaultValue: string
+}
+
+export function Tabs({ children }: TabsProps) {
   return <div className="tabs">{children}</div>
 }
 
@@ -8,8 +13,13 @@ export function TabsList({ children }: { children: React.ReactNode }) {
   return <div className="tabs-list">{children}</div>
 }
 
-export function TabsTrigger({ children }: { children: React.ReactNode }) {
-  return <button className="tabs-trigger">{children}</button>
+type TabsTriggerProps = {
+  children: React.ReactNode
+  value: string
+}
+
+export function TabsTrigger({ children, value }: TabsTriggerProps) {
+  return <button data-value={value}>{children}</button>
 }
 
 export function TabsContent({ children }: { children: React.ReactNode }) {
