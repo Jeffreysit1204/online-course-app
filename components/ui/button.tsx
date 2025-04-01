@@ -1,5 +1,7 @@
 import React from 'react'
 
-export function Button({ children }: { children: React.ReactNode }) {
-  return <button>{children}</button>
+type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement>
+
+export function Button(props: ButtonProps) {
+  return <button {...props}>{props.children}</button>
 }
